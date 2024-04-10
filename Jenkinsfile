@@ -1,6 +1,6 @@
 pipeline {
      agent {
-        label 'agent-linux'
+        #####---label 'agent-linux'########
     }
 
     parameters {
@@ -8,8 +8,8 @@ pipeline {
     }
 
     environment {
-        AWS_ACCESS_KEY_ID = credentials('aws_credential_id')
-        AWS_SECRET_ACCESS_KEY = credentials('aws_credential_id')
+       ---AWS_ACCESS_KEY_ID = credentials('aws_credential_id')
+        #---AWS_SECRET_ACCESS_KEY = credentials('aws_credential_id')
     }
 
     stages {
@@ -52,7 +52,7 @@ pipeline {
                         sh 'export AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}'
                         sh 'export AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}'
                         // Deploy resources using Terraform
-                        sh 'terraform apply -auto-approve tfplan'
+                        sh 'terraform applyyyyyy -auto-approve tfplan'
                     
                 }
             }
